@@ -1,0 +1,92 @@
+
+local SBK = Instance.new("ScreenGui")
+local S1 = Instance.new("Frame")
+local B1 = Instance.new("ImageLabel")
+local B2 = Instance.new("ImageLabel")
+local FFK = Instance.new("TextLabel")
+local FAC = Instance.new("TextLabel")
+local FCR = Instance.new("TextLabel")
+
+
+--Sebb was here:
+
+SBK.Name = "SBK"
+SBK.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+S1.Name = "S1"
+S1.Parent = SBK
+S1.BackgroundColor3 = Color3.fromRGB(24, 25, 26)
+S1.BorderColor3 = Color3.fromRGB(24, 25, 26)
+S1.BorderSizePixel = 0
+S1.Position = UDim2.new(0.835353076, 0, 0.0233815257, 0)
+S1.Size = UDim2.new(0, 178, 0, 40)
+S1.Active = true
+S1.Draggable = true
+
+B1.Name = "B1"
+B1.Parent = S1
+B1.AnchorPoint = Vector2.new(0.5, 0.5)
+B1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+B1.BackgroundTransparency = 1.000
+B1.Position = UDim2.new(0.502030611, 0, 0.538200736, 0)
+B1.Size = UDim2.new(1.02264953, 8, 1.07780993, 8)
+B1.Image = "rbxassetid://3570695787"
+B1.ImageColor3 = Color3.fromRGB(24, 25, 26)
+B1.ScaleType = Enum.ScaleType.Slice
+B1.SliceCenter = Rect.new(100, 100, 100, 100)
+B1.SliceScale = 0.040
+
+B2.Name = "B2"
+B2.Parent = S1
+B2.AnchorPoint = Vector2.new(0.5, 0.5)
+B2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+B2.BackgroundTransparency = 1.000
+B2.Position = UDim2.new(0.502030611, 0, 1.12368309, 0)
+B2.Size = UDim2.new(1.02264965, 8, -0.0931548253, 8)
+B2.Image = "rbxassetid://3570695787"
+B2.ImageColor3 = Color3.fromRGB(235, 235, 235)
+B2.ScaleType = Enum.ScaleType.Slice
+B2.SliceCenter = Rect.new(100, 100, 100, 100)
+B2.SliceScale = 0.040
+
+FFK.Name = "FFK"
+FFK.Parent = S1
+FFK.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+FFK.BackgroundTransparency = 1.000
+FFK.Position = UDim2.new(-0.00250309706, 0, -0.00355750509, 0)
+FFK.Size = UDim2.new(0, 76, 0, 21)
+FFK.Font = Enum.Font.GothamSemibold
+FFK.Text = "Anti AFK script:"
+FFK.TextColor3 = Color3.fromRGB(235, 235, 235)
+FFK.TextSize = 12.000
+FFK.TextXAlignment = Enum.TextXAlignment.Left
+
+FAC.Name = "FAC"
+FAC.Parent = FFK
+FAC.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+FAC.BackgroundTransparency = 1.000
+FAC.Position = UDim2.new(1.23898411, 0, 0.0214424953, 0)
+FAC.Size = UDim2.new(0, 76, 0, 21)
+FAC.Font = Enum.Font.GothamSemibold
+FAC.Text = "Activated"
+FAC.TextColor3 = Color3.fromRGB(235, 235, 235)
+FAC.TextSize = 12.000
+FAC.TextXAlignment = Enum.TextXAlignment.Left
+
+FCR.Name = "FCR"
+FCR.Parent = FFK
+FCR.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+FCR.BackgroundTransparency = 1.000
+FCR.Position = UDim2.new(-0.00244110823, 0, 0.952394962, 0)
+FCR.Size = UDim2.new(0, 76, 0, 21)
+FCR.Font = Enum.Font.GothamSemibold
+FCR.Text = "By : Sebbw#1077"
+FCR.TextColor3 = Color3.fromRGB(235, 235, 235)
+FCR.TextSize = 12.000
+FCR.TextXAlignment = Enum.TextXAlignment.Left
+
+local vu = game:GetService"VirtualUser"
+game:GetService"Players".LocalPlayer.Idled:Connect(function()
+	vu:CaptureController()
+	vu:ClickButton2(Vector2.new())
+end)
